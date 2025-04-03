@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488342117062",
+    "project_id": "muj-olx",
+    "storage_bucket": "muj-olx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488342117062:android:55c2c218c1b34b096315c7",
+        "android_client_info": {
+          "package_name": "com.example.muj_olx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_-VsnFl-yu2kR-mWy0ent0t6j---lRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
