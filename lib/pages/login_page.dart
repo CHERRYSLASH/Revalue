@@ -1,72 +1,78 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.grey[300]!, Colors.grey[600]!],
-            ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 30, top: 100),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: 'REVALUE'.split('').map((letter) => 
-                    Text(letter, 
-                      style: const TextStyle(
-                        fontSize: 50, fontWeight: FontWeight.bold,shadows: [
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 3.0,
-                            color: Color.fromARGB(255, 0, 0, 0),
-                            ),
-                          ],
-                        )
-                      )
-                  ).toList(),
-                ),
-              ),
-              Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding:EdgeInsets.only(bottom:100),
-                child: Column(
-                  children: [
-                    OutlinedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/registration');
-                      },
-                      style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 3), 
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12), 
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      child: const Text('SIGN UP',style: TextStyle(fontSize:15 , fontWeight: FontWeight.bold,color: Color.fromARGB(255, 0, 0, 0))),
+      body: Container(
+        color: const Color(0xFF191A1F),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Spacer pushes content downward
+            const Spacer(),
+
+            // "REVALUE" text centered
+            Center(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: 'REVALUE'.split('').map((letter) => 
+                  Text(
+                    letter, 
+                    style: const TextStyle(
+                      color: const Color(0xFFCCD0CF),
+                      fontSize: 50, 
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height:20),
-                    GestureDetector(
-                      child: const Text('Already registered ? Login In',style: TextStyle(fontSize:10 , fontWeight: FontWeight.bold,color: Color.fromARGB(255, 0, 0, 0))),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/sign_up');
-                      }
-                      )
-                   ],
-                ),
+                  ),
+                ).toList(),
+              ),
+            ),
+
+            // Spacer pushes the button down dynamically
+            const Spacer(flex: 1),
+
+            // Buttons at the bottom
+            Padding(
+              padding: const EdgeInsets.only(bottom: 30), // Adjusts spacing
+              child: Column(
+                children: [
+                  GestureDetector(
+                    child: const Text(
+                      'Already registered? Log In',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFCCD0CF)),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/sign_up');
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/registration');
+                    },
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF607B82), // Button color
+                    foregroundColor: const Color(0xFFCCD0CF), // Text color
+                    padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 15), // Extra padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30), // Rounded edges
+                    ),
+                    ),
+                    child: const Text(
+                      'GET STARTED',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFCCD0CF)),
+                    ),
+                  )
+                ],
               ),
             ),
           ],
